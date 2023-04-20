@@ -9,3 +9,13 @@ button.addEventListener("click", () => {
       output.innerHTML = data.output;
     });
 });
+
+input.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    fetch("https://pig-latin.patelprem1.repl.co/api?sentence=" + input.value)
+      .then((res) => res.json())
+      .then((data) => {
+        output.innerHTML = data.output;
+      });
+  }
+});
